@@ -6,7 +6,7 @@
 #    By: jphasha <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/25 01:45:05 by jphasha           #+#    #+#              #
-#    Updated: 2019/08/30 16:58:37 by jphasha          ###   ########.fr        #
+#    Updated: 2019/09/16 15:28:19 by jphasha          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,7 +53,7 @@ $(NAME): $(OBJECTS)
 	ranlib $(NAME)
 
 $(OBJECTS): $(SOURCES)
-	CC -c $(flags) $(SOURCES)
+	$(CC) -c $(flags) $(SOURCES)
 
 clean:
 	rm -rf $(OBJECTS) .*.swp
