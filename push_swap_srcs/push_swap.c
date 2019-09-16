@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jphasha <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/16 15:31:20 by jphasha           #+#    #+#             */
-/*   Updated: 2019/09/16 16:14:50 by jphasha          ###   ########.fr       */
+/*   Created: 2019/09/16 16:05:06 by jphasha           #+#    #+#             */
+/*   Updated: 2019/09/16 16:16:13 by jphasha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../push_swap.h"
 
-# include "libft/libft.h"
-
-typedef struct		s_stack
+int		main(int ac, char *av[])
 {
-	int				data;
-	struct s_stack	*next;
-}					t_stack;
-
-#endif
+	if (ac > 0)
+	{
+		ft_putendl(av[0]);
+	}
+	return (0);
+}
