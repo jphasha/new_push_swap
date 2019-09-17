@@ -6,15 +6,15 @@
 /*   By: jphasha <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 08:29:24 by jphasha           #+#    #+#             */
-/*   Updated: 2019/09/17 09:14:36 by jphasha          ###   ########.fr       */
+/*   Updated: 2019/09/17 18:21:56 by jphasha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static void	ft_new_node(int data, t_stack **head)
+void			ft_new_node(int data, t_stack **head)
 {
-	t_stack	*node;
+	t_stack		*node;
 
 	if (!(node = (t_stack *)ft_memalloc(sizeof(t_stack))))
 		return ;
@@ -23,9 +23,34 @@ static void	ft_new_node(int data, t_stack **head)
 	*head = node;
 }
 
-void		ft_push_top(int data, t_stack **head)
+void			ft_deltop_node(t_stack **head)
 {
-	t_stack	*lnk;
+	t_stack		*holder;
+
+	holder = *head;
+	if (holder == NULL)
+		return ;
+	holder = holder->next;
+	ft_memdel((void **)head);
+	*head = holder;
+}
+
+void			ft_delbot_node(t_stack **head)
+{
+	t_stack		*hldr;
+
+	hldr = *head;
+	if (hldr == NULL)
+		return ;
+	while (hldr->next->next != NULL)
+		hldr = hldr->next;
+	free(hldr->next);
+	hldr->next = NULL;
+}
+
+void			ft_push_top(int data, t_stack **head)
+{
+	t_stack		*lnk;
 
 	lnk = NULL;
 	if (!head)
@@ -38,6 +63,20 @@ void		ft_push_top(int data, t_stack **head)
 	}
 }
 
-/*void		ft_push_bottom(int data, t_stack **head)
+void			ft_push_bottom(int data, t_stack **head)
 {
-}*/
+	t_stack		*lnk;
+
+	lnk = *head;
+	if (!*head)
+	{
+		ft_new_node(data, head);
+		return ;
+	}
+	while (lnk->next != NULL)
+		lnk = lnk->next;
+	if (!(lnk->next = (t_stack *)ft_memalloc(sizeof(t_stack))))
+		return ;
+	lnk->next->data = data;
+	lnk->next->next = NULL;
+}

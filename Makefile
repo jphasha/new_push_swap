@@ -6,15 +6,16 @@
 #    By: jphasha <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/16 14:34:47 by jphasha           #+#    #+#              #
-#    Updated: 2019/09/17 08:32:25 by jphasha          ###   ########.fr        #
+#    Updated: 2019/09/17 18:30:06 by jphasha          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swapft.a
 
-SOURCES = checker_srcs/checker.c push_swap_srcs/push_swap.c shared_srcs/ft_stack_man.c
+SOURCES = checker_srcs/checker.c push_swap_srcs/push_swap.c shared_srcs/ft_stack_man.c \
+		  shared_srcs/ft_stack_man2.c
 
-OBJECTS = checker.o push_swap.o ft_stack_man.o ft_stack_man.o
+OBJECTS = checker.o push_swap.o ft_stack_man.o ft_stack_man2.o
 
 CC = gcc
 
