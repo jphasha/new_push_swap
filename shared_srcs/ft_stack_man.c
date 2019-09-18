@@ -6,7 +6,7 @@
 /*   By: jphasha <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 08:29:24 by jphasha           #+#    #+#             */
-/*   Updated: 2019/09/17 18:21:56 by jphasha          ###   ########.fr       */
+/*   Updated: 2019/09/18 17:22:24 by jphasha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,11 @@ void			ft_delbot_node(t_stack **head)
 	hldr = *head;
 	if (hldr == NULL)
 		return ;
+	else if (hldr->next == NULL)
+	{
+		free(*head);
+		*head = NULL;
+	}
 	while (hldr->next->next != NULL)
 		hldr = hldr->next;
 	free(hldr->next);
