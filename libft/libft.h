@@ -6,7 +6,7 @@
 /*   By: jphasha <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/24 23:24:42 by jphasha           #+#    #+#             */
-/*   Updated: 2019/08/30 13:51:10 by jphasha          ###   ########.fr       */
+/*   Updated: 2019/09/20 15:31:45 by jphasha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,17 @@ typedef struct		s_list
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
+void				ft_loop_memdel(void **mem);
 void				ft_merge_sort(int arr_size, int *arr);
 void				ft_putchar(char c);
 void				ft_putchar_fd(char c, int fd);
 void				ft_putstr(char const *str);
 void				ft_putstr_fd(char const *str, int fd);
 void				ft_putendl(char const *s);
+void				ft_putendl_arr(char **arr);
 void				ft_putendl_fd(char const *s, int fd);
 void				ft_putnbr(int n);
+void				ft_putnbr_arr(int *num_arr, int arr_size);
 void				ft_putnbr_fd(int n, int fd);
 void				ft_print_hex(int n);
 void				ft_rev_print(char *str);

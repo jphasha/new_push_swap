@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_array_size.c                                    :+:      :+:    :+:   */
+/*   ft_loop_memdel.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jphasha <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/28 12:18:19 by jphasha           #+#    #+#             */
-/*   Updated: 2019/09/20 15:30:21 by jphasha          ###   ########.fr       */
+/*   Created: 2019/09/20 14:12:53 by jphasha           #+#    #+#             */
+/*   Updated: 2019/09/20 14:24:27 by jphasha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int			ft_array_size(int *array)
+void		ft_loop_memdel(void **mem)
 {
-	int		size;
+	int		i;
 
-	size = 0;
-	//this function gives off highly unreliable data.
-	//especially data at sizeof(array);
-	//so let's avoid using it until i can debug it.
-	if (sizeof(array[0]) < 1)
-		return (0);
-	size = sizeof(array) / sizeof(array[0]);
-	return (size);
+	i = 0;
+	while (mem[i] != NULL)
+	{
+		free(mem[i]);
+		mem[i] = NULL;
+		i++;
+	}
+	free(mem);
+	mem = NULL;
 }
