@@ -6,7 +6,7 @@
 /*   By: jphasha <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 08:29:24 by jphasha           #+#    #+#             */
-/*   Updated: 2019/09/18 17:22:24 by jphasha          ###   ########.fr       */
+/*   Updated: 2019/09/20 09:52:18 by jphasha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,22 +35,37 @@ void			ft_deltop_node(t_stack **head)
 	*head = holder;
 }
 
-void			ft_delbot_node(t_stack **head)
+void			ft_del_stack(t_stack **hd_a, t_stack **hd_b)
 {
 	t_stack		*hldr;
+	t_stack		*iter;
 
-	hldr = *head;
-	if (hldr == NULL)
-		return ;
-	else if (hldr->next == NULL)
+	hldr = *hd_a;
+	if (hldr)
 	{
-		free(*head);
-		*head = NULL;
+		iter = hldr->next;
+		while (hldr->next != NULL)
+		{
+			free(hldr);
+			hldr = iter;
+			iter = hldr->next;
+		}
+		free(hldr);
+		*hd_a = NULL;
 	}
-	while (hldr->next->next != NULL)
-		hldr = hldr->next;
-	free(hldr->next);
-	hldr->next = NULL;
+	hldr = *hd_b;
+	if (hldr)
+	{
+		iter = hldr->next;
+		while (hldr->next != NULL)
+		{
+			free(hldr);
+			hldr = iter;
+			iter = hldr->next;
+		}
+		free(hldr);
+		*hd_b = NULL;
+	}
 }
 
 void			ft_push_top(int data, t_stack **head)
