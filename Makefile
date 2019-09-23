@@ -6,16 +6,16 @@
 #    By: jphasha <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/16 14:34:47 by jphasha           #+#    #+#              #
-#    Updated: 2019/09/20 16:10:00 by jphasha          ###   ########.fr        #
+#    Updated: 2019/09/23 11:39:16 by jphasha          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swapft.a
 
 SOURCES = checker_srcs/checker.c push_swap_srcs/push_swap.c shared_srcs/ft_stack_man.c \
-		  shared_srcs/ft_stack_man2.c shared_srcs/ft_arg_man.c
+		  shared_srcs/ft_stack_man2.c shared_srcs/ft_arg_man.c shared_srcs/ft_error_handle.c \
 
-OBJECTS = checker.o push_swap.o ft_stack_man.o ft_stack_man2.o ft_arg_man.o
+OBJECTS = checker.o push_swap.o ft_stack_man.o ft_stack_man2.o ft_arg_man.o ft_error_handle.o \
 
 CC = gcc
 
