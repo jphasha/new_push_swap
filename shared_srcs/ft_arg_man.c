@@ -6,13 +6,14 @@
 /*   By: jphasha <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/20 13:40:07 by jphasha           #+#    #+#             */
-/*   Updated: 2019/09/20 17:09:24 by jphasha          ###   ########.fr       */
+/*   Updated: 2019/09/23 11:13:38 by jphasha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+#include <stdio.h>
 
-void		ft_get_args(char **argv, t_stack **hd_a)
+char		**ft_get_args(char **argv, t_stack **hd_a, int argc)
 {
 	t_stack	*hldr;
 	char	**arg_hldr;
@@ -23,22 +24,21 @@ void		ft_get_args(char **argv, t_stack **hd_a)
 	arg_hldr = NULL;
 	i = 1;
 	j = 0;
-	if (argv[2] == NULL)
+	if (!argv[1] && argv[0])
+		return (NULL);
+	else if (argv[1] && !argv[2])
 		arg_hldr = ft_strsplit(argv[1], ' ');
 	else
 	{
-		arg_hldr = 
+		if (!(arg_hldr = (char **)ft_memalloc(sizeof(char *) * (argc))))
+			return (NULL);
 		while (argv[i] != NULL)
 		{
-			arg_hldr[j] = argv[i];
-			j++;
+			arg_hldr[j] = ft_strdup(argv[i]);
 			i++;
+			j++;
 		}
+		arg_hldr[j] = NULL;
 	}
-	if (arg_hldr)
-	{
-		ft_putendl_arr(arg_hldr);
-		ft_loop_memdel((void **)arg_hldr);
-		hldr = NULL;
-	}
+	return (arg_hldr);
 }
