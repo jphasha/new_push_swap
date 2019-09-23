@@ -6,7 +6,7 @@
 /*   By: jphasha <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 08:29:24 by jphasha           #+#    #+#             */
-/*   Updated: 2019/09/20 09:52:18 by jphasha          ###   ########.fr       */
+/*   Updated: 2019/09/23 14:53:36 by jphasha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,35 +37,8 @@ void			ft_deltop_node(t_stack **head)
 
 void			ft_del_stack(t_stack **hd_a, t_stack **hd_b)
 {
-	t_stack		*hldr;
-	t_stack		*iter;
-
-	hldr = *hd_a;
-	if (hldr)
-	{
-		iter = hldr->next;
-		while (hldr->next != NULL)
-		{
-			free(hldr);
-			hldr = iter;
-			iter = hldr->next;
-		}
-		free(hldr);
-		*hd_a = NULL;
-	}
-	hldr = *hd_b;
-	if (hldr)
-	{
-		iter = hldr->next;
-		while (hldr->next != NULL)
-		{
-			free(hldr);
-			hldr = iter;
-			iter = hldr->next;
-		}
-		free(hldr);
-		*hd_b = NULL;
-	}
+	ft_free_stack(hd_a);
+	ft_free_stack(hd_b);
 }
 
 void			ft_push_top(int data, t_stack **head)

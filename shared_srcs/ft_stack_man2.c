@@ -6,7 +6,7 @@
 /*   By: jphasha <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 18:23:00 by jphasha           #+#    #+#             */
-/*   Updated: 2019/09/18 13:04:15 by jphasha          ###   ########.fr       */
+/*   Updated: 2019/09/23 14:53:53 by jphasha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,24 @@ int				ft_is_sorted(t_stack **head)
 		st_cp = st_cp->next;
 	}
 	return (1);
+}
+
+void			ft_free_stack(t_stack **head)
+{
+	t_stack		*hldr;
+	t_stack		*iter;
+
+	hldr = *head;
+	if (hldr)
+	{
+		iter = hldr->next;
+		while (hldr->next != NULL)
+		{
+			free(hldr);
+			hldr = iter;
+			iter = hldr->next;
+		}
+		free(hldr);
+		*head = NULL;
+	}
 }
