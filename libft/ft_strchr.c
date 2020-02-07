@@ -21,7 +21,7 @@ char	*ft_strchr(const char *s, int c)
 	caster = (char *)s;
 	oc = (char)c;
 	i = 0;
-	while (s[i] != c)
+	while (s[i] != oc)
 	{
 		if (caster[i] == '\0')
 		{

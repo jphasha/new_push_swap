@@ -14,10 +14,8 @@
 
 char	*ft_strdup(const char *src)
 {
-	int		i;
 	char	*srccpy;
 
-	i = 0;
 	srccpy = (char *)malloc(sizeof(char) * (ft_strlen(src) + 1));
 	if (srccpy == NULL)
 	{

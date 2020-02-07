@@ -36,7 +36,7 @@ static int		line_builder(const int fd, char **char_stock, char **line_check)
 {
 	int			characters;
 
-	while (*line_check == '\0')
+	while (*line_check == NULL)
 	{
 		characters = ft_get_chunk(fd, *&char_stock);
 		if (characters == 0)
