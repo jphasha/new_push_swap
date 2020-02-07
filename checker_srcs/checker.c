@@ -16,17 +16,18 @@ int		main(int ac, char *av[])
 {
 	if (ac == 1)
 		return (0);
-	int		i;
+	// int		i;
 	t_stack	*stack_A;
 	t_stack	*stack_B;
 	char	**args;
 
 	stack_A = NULL;
 	stack_B = NULL;
-	i = 0;
+	// i = 0;
 	args = ft_get_args(av, &stack_A, ac);
 	if (ft_error_handle(args))
 	{
+		ft_putendl("we have no errors");
 	}
 	ft_loop_memdel((void **)args);
 	ft_del_stack(&stack_A, &stack_B);

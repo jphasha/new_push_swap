@@ -46,5 +46,9 @@ char		**ft_get_args(char **argv, t_stack **hd_a, int argc)
 			return (NULL);
 		ft_sto_args(arg_hldr, argv);
 	}
+
+	/* i'm just printing here to shut up my editor. as soon as i remember why \
+	 i created this variable then i will use it accordingly. */
+	ft_disp_list(&hldr, &hldr);
 	return (arg_hldr);
 }
