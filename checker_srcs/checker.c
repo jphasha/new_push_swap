@@ -29,6 +29,11 @@ int		main(int ac, char *av[])
 	{
 		ft_putendl("we have no errors");
 	}
+
+	else
+	{
+		ft_putendl("your stack contains some unwanted stuff");
+	}
 	ft_loop_memdel((void **)args);
 	ft_del_stack(&stack_A, &stack_B);
 	return (0);
