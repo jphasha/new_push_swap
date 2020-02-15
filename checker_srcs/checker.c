@@ -16,23 +16,39 @@ int		main(int ac, char *av[])
 {
 	if (ac == 1)
 		return (0);
-	// int		i;
 	t_stack	*stack_A;
 	t_stack	*stack_B;
 	char	**args;
+	char	*instr;
 
 	stack_A = NULL;
 	stack_B = NULL;
-	// i = 0;
+	instr = NULL;
 	args = ft_get_args(av, &stack_A, ac);
-	if (ft_error_handle(args))
+	if (args[0])
 	{
-		ft_putendl("we have no errors");
-	}
+		if (ft_error_handle(args))
+		{
+			while (get_next_line(0, &instr))
+			{
+				if (ft_valid_instr(instr))
+				{
+					/* lt's sort according to the instructions
+					but for now let us fix the 'ft_valid_instr first' */
+					ft_putendl("yay! you have a working instruction");
+				}
 
-	else
-	{
-		ft_putendl("your stack contains some unwanted stuff");
+				else
+				{
+					ft_putendl_fd("Error", 2);
+				}
+			}
+		}
+
+		else
+		{
+			ft_putendl_fd("Error", 2);
+		}
 	}
 	ft_loop_memdel((void **)args);
 	ft_del_stack(&stack_A, &stack_B);

@@ -21,10 +21,11 @@ typedef struct		s_stack
 	struct s_stack	*next;
 }					t_stack;
 char				**ft_get_args(char **argv, t_stack **hd_a, int argc);
-int					ft_bigger_int(char **args);
-int					ft_double(char **args);
+/*int					ft_bigger_int(char **args);
+int					ft_double(char **args);*/
 int					ft_error_handle(char **args);
 int					ft_is_sorted(t_stack **head);
+int					ft_valid_instr(char *instr);
 void				ft_del_stack(t_stack **hd_a, t_stack **hd_b);
 void				ft_deltop_node(t_stack **head);
 void				ft_disp_list(t_stack **hd_a, t_stack **hd_b);

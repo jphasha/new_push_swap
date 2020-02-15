@@ -12,7 +12,7 @@
 
 #include "../push_swap.h"
 
-int				ft_all_digits(char **str)
+static int				ft_all_digits(char **str)
 {
 	int			i;
 	int			j;
@@ -36,7 +36,7 @@ int				ft_all_digits(char **str)
 	return (dg);
 }
 
-int				ft_double(char **args)
+static int				ft_double(char **args)
 {
 	int			i;
 	int			j;
@@ -61,7 +61,7 @@ int				ft_double(char **args)
 	return (dub);
 }
 
-int				ft_bigger_int(char **args)
+static int				ft_bigger_int(char **args)
 {
 	int			bint;
 	long long	nbr;
@@ -77,6 +77,20 @@ int				ft_bigger_int(char **args)
 		i++;
 	}
 	return (bint);
+}
+
+int				ft_valid_instr(char *instr)
+{
+	int	vinst;
+	
+	vinst = 1;
+	/*if (instr == "sa")
+	{
+		ft_putendl("valid instr");
+		vinst = 1;
+	}*/
+	ft_putendl(instr);
+	return (vinst);
 }
 
 int				ft_error_handle(char **args)
