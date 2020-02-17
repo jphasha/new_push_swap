@@ -82,13 +82,31 @@ static int				ft_bigger_int(char **args)
 int				ft_valid_instr(char *instr)
 {
 	int	vinst;
+	int	i;
+	char **valid_instrs;
 	
 	vinst = 1;
-	/*if (instr == "sa")
+	i = 0;
+	valid_instrs = (char **)malloc(sizeof(char *) * 11 + 1);
+	valid_instrs[0] = "sa";
+	valid_instrs[1] = "sb";
+	valid_instrs[2] = "ss";
+	valid_instrs[3] = "pa";
+	valid_instrs[4] = "pb";
+	valid_instrs[5] = "ra";
+	valid_instrs[6] = "rb";
+	valid_instrs[7] = "rr";
+	valid_instrs[8] = "rra";
+	valid_instrs[9] = "rrb";
+	valid_instrs[10] = "rrr";
+	valid_instrs[11] = NULL;
+	while (valid_instrs[i])
 	{
-		ft_putendl("valid instr");
-		vinst = 1;
-	}*/
+		if (instr == valid_instrs[i])
+		{
+			ft_putendl("valid instr");
+		}
+	}
 	ft_putendl(instr);
 	return (vinst);
 }
