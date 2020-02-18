@@ -106,6 +106,7 @@ int				ft_valid_instr(char *instr)
 		{
 			ft_putendl("valid instr");
 		}
+		i++;
 	}
 	ft_putendl(instr);
 	return (vinst);
