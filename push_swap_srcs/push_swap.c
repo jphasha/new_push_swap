@@ -14,9 +14,13 @@
 
 int		main(int ac, char *av[])
 {
-	if (ac > 1)
+	if (ac != 1)
 	{
-		ft_putendl(av[0]);
+		t_stack	*stack_A;
+		t_stack	*stack_B;
+
+		stack_A = NULL;
+		stack_B = NULL;
 	}
 	return (0);
 }
