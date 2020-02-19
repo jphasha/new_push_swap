@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+/*#include "libft.h"
 
 int			ft_array_size(int *array)
 {
@@ -24,4 +24,4 @@ int			ft_array_size(int *array)
 		return (0);
 	size = sizeof(array) / sizeof(array[0]);
 	return (size);
-}
+}*/
