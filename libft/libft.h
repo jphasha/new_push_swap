@@ -89,7 +89,7 @@ char				*ft_strmap(char const *s, char (*f)(char));
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char				**ft_strsplit(char const *s, char c);
 int					get_next_line(const int fd, char **line);
-int					ft_array_size(int *array);
+/*int					ft_array_size(int *array);*/
 int					ft_atoi(const char *str);
 int					ft_tolower(int c);
 int					ft_toupper(int c);

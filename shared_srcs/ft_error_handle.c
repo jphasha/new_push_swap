@@ -85,7 +85,7 @@ int				ft_valid_instr(char *instr)
 	int	i;
 	char **valid_instrs;
 	
-	vinst = 1;
+	vinst = 0;
 	i = 0;
 	valid_instrs = (char **)malloc(sizeof(char *) * 11 + 1);
 	valid_instrs[0] = "sa";
@@ -102,13 +102,13 @@ int				ft_valid_instr(char *instr)
 	valid_instrs[11] = NULL;
 	while (valid_instrs[i])
 	{
-		if (instr == valid_instrs[i])
+		if (!ft_strcmp(instr, valid_instrs[i]))
 		{
 			ft_putendl("valid instr");
+			vinst = 1;
 		}
 		i++;
 	}
-	ft_putendl(instr);
 	return (vinst);
 }
 

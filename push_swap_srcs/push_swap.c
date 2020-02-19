@@ -21,6 +21,8 @@ int		main(int ac, char *av[])
 
 		stack_A = NULL;
 		stack_B = NULL;
+
+		ft_putendl(av[0]);
 	}
 	return (0);
 }
