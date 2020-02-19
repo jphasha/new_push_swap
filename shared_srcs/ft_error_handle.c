@@ -104,7 +104,6 @@ int				ft_valid_instr(char *instr)
 	{
 		if (!ft_strcmp(instr, valid_instrs[i]))
 		{
-			ft_putendl("valid instr");
 			vinst = 1;
 		}
 		i++;
