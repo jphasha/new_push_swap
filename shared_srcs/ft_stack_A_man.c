@@ -42,3 +42,15 @@ void    ft_rra(t_stack **stack_A)
     *stack_A = temp_head->next;
     temp_head->next = NULL;
 }
+
+void    ft_pa(t_stack **stack_A, t_stack **stack_B)
+{
+    t_stack *temp_head;
+
+    temp_head = *stack_B;
+    if (temp_head)
+    {
+        ft_push_top(temp_head->data, stack_A);
+        ft_deltop_node(stack_B);
+    }
+}

@@ -14,8 +14,11 @@ NAME = push_swapft.a
 
 SOURCES = checker_srcs/checker.c push_swap_srcs/push_swap.c shared_srcs/ft_stack_man.c \
 		  shared_srcs/ft_stack_man2.c shared_srcs/ft_arg_man.c shared_srcs/ft_error_handle.c \
+		  shared_srcs/ft_both_stacks_man.c shared_srcs/ft_stack_A_man.c \
+		  shared_srcs/ft_stack_B_man.c
 
 OBJECTS = checker.o push_swap.o ft_stack_man.o ft_stack_man2.o ft_arg_man.o ft_error_handle.o \
+		  ft_both_stacks_man.o ft_stack_A_man.o ft_stack_B_man.o
 
 CC = gcc
 

@@ -29,8 +29,19 @@ void				ft_deltop_node(t_stack **head);
 void				ft_disp_list(t_stack **hd_a, t_stack **hd_b);
 void				ft_free_stack(t_stack **head);
 void				ft_new_node(int data, t_stack **head);
+void				ft_pa(t_stack **stack_A, t_stack **stack_B);
+void				ft_pb(t_stack **stack_A, t_stack **stack_B);
 void				ft_push_top(int data, t_stack **head);
 void				ft_push_bottom(int data, t_stack **head);
+void				ft_ra(t_stack **stack_A);
+void				ft_rb(t_stack **stack_B);
+void				ft_rr(t_stack **stack_A, t_stack **stack_B);
+void				ft_rra(t_stack **stack_A);
+void				ft_rrb(t_stack **stack_B);
+void				ft_rrr(t_stack **stack_A, t_stack **stack_B);
+void				ft_sa(t_stack **stack_A);
+void				ft_ss(t_stack **stack_A, t_stack **stack_B);
+void				ft_sb(t_stack **stack_B);
 void				ft_srtd_stck(t_stack **hd_a, t_stack **hd_b);
 
 #endif

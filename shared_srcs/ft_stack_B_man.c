@@ -42,3 +42,15 @@ void    ft_rrb(t_stack **stack_B)
     *stack_B = temp_head->next;
     temp_head->next = NULL;
 }
+
+void    ft_pb(t_stack **stack_A, t_stack **stack_B)
+{
+    t_stack *temp_head;
+
+    temp_head = *stack_A;
+    if (temp_head)
+    {
+        ft_push_top(temp_head->data, stack_B);
+        ft_deltop_node(stack_A);
+    }
+}
