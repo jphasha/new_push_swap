@@ -82,3 +82,17 @@ void			ft_free_stack(t_stack **head)
 		*head = NULL;
 	}
 }
+
+void			ft_build_stack(t_stack **stack, char **args)
+{
+	int			i;
+
+	i = 0;
+	if (!args[i])
+		return ;
+	while (args[i])
+	{
+		ft_push_bottom(ft_atoi(args[i]), stack);
+		i++;
+	}
+}

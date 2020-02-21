@@ -60,6 +60,7 @@ int			main(int ac, char *av[])
 	{
 		if (ft_error_handle(args))
 		{
+			ft_build_stack(&stack_A, args);
 			while (get_next_line(0, &instr))
 			{
 				if (ft_valid_instr(instr))

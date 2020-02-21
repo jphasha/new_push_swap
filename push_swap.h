@@ -24,6 +24,7 @@ char				**ft_get_args(char **argv, int argc);
 int					ft_error_handle(char **args);
 int					ft_is_sorted(t_stack **head);
 int					ft_valid_instr(char *instr);
+void				ft_build_stack(t_stack **stack, char **args);
 void				ft_del_stack(t_stack **hd_a, t_stack **hd_b);
 void				ft_deltop_node(t_stack **head);
 void				ft_disp_list(t_stack **hd_a, t_stack **hd_b);
