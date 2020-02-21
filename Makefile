@@ -10,7 +10,11 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = push_swapft.a
+CHECKER = checker
+
+PUSH_SWAP = push_swap
+
+LIBRARY = push_swapft.a
 
 SOURCES = checker_srcs/checker.c push_swap_srcs/push_swap.c shared_srcs/ft_stack_man.c \
 		  shared_srcs/ft_stack_man2.c shared_srcs/ft_arg_man.c shared_srcs/ft_error_handle.c \
@@ -24,11 +28,17 @@ CC = gcc
 
 flags = -Wall -Wextra -Werror
 
-all: $(NAME)
+all: $(PUSH_SWAP)
 
-$(NAME): $(OBJECTS)
-	ar rc $(NAME) $(OBJECTS) libft/*.o
-	ranlib $(NAME)
+$(PUSH_SWAP): $(CHECKER)
+	$(CC) $(flags) -o push_swap $(LIBRARY)
+
+$(CHECKER): $(LIBRARY)
+	$(CC) $(flags) -o checker $(LIBRARY)
+
+$(LIBRARY): $(OBJECTS)
+	ar rc $(LIBRARY) $(OBJECTS) libft/*.o
+	ranlib $(LIBRARY)
 
 $(OBJECTS): $(SOURCES)
 	$(CC) $(flags) -c $(SOURCES)
@@ -38,19 +48,15 @@ re: fclean all
 	make -C libft/ re
 
 clean:
-	rm -rf $(OBJECTS) .*.swp
+	rm -rf $(OBJECTS) $(LIBRARY) libft/libft.a .*.swp
 	make -C libft/ clean
 
 fclean: clean
-	rm -rf $(NAME) checker push_swap a.out program
+	rm -rf $(CHECKER) $(PUSH_SWAP) a.out program
 	make -C libft/ fclean
 
 N:
 	norminette -R CheckForbiddenSourceHeader
 
-c:
-	$(CC) $(flags) -o checker checker_srcs/checker.c $(NAME)
-	$(CC) $(flags) -o push_swap push_swap_srcs/push_swap.c $(NAME)
-
 p:
-	$(CC) $(flags) -o program main.c $(NAME)
+	$(CC) $(flags) -o program main.c $(LIBRARY)
