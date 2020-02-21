@@ -118,6 +118,9 @@ int				ft_error_handle(char **args)
 
 	err = 1;
 	if (!ft_all_digits(args) || !ft_double(args) || !ft_bigger_int(args))
+	{
 		err = 0;
+		ft_putendl_fd("Error", 2);
+	}
 	return (err);
 }
