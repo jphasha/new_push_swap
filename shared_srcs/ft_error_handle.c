@@ -6,7 +6,7 @@
 /*   By: jphasha <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/23 11:39:25 by jphasha           #+#    #+#             */
-/*   Updated: 2019/09/23 14:17:09 by jphasha          ###   ########.fr       */
+/*   Updated: 2020/02/21 09:18:51 by jphasha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +108,7 @@ int				ft_valid_instr(char *instr)
 		}
 		i++;
 	}
+	free(valid_instrs);
 	return (vinst);
 }
 
