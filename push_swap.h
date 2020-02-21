@@ -20,7 +20,7 @@ typedef struct		s_stack
 	int				data;
 	struct s_stack	*next;
 }					t_stack;
-char				**ft_get_args(char **argv, t_stack **hd_a, int argc);
+char				**ft_get_args(char **argv, int argc);
 int					ft_error_handle(char **args);
 int					ft_is_sorted(t_stack **head);
 int					ft_valid_instr(char *instr);

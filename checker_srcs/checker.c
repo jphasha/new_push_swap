@@ -55,7 +55,7 @@ int			main(int ac, char *av[])
 	stack_A = NULL;
 	stack_B = NULL;
 	instr = NULL;
-	args = ft_get_args(av, &stack_A, ac);
+	args = ft_get_args(av, ac);
 	if (args[0])
 	{
 		if (ft_error_handle(args))

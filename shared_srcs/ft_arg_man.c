@@ -28,12 +28,10 @@ static void	ft_sto_args(char **ah, char **av)
 	ah[j] = NULL;
 }
 
-char		**ft_get_args(char **argv, t_stack **hd_a, int argc)
+char		**ft_get_args(char **argv, int argc)
 {
-	t_stack	*hldr;
 	char	**arg_hldr;
 
-	hldr = *hd_a;
 	arg_hldr = NULL;
 	if (!argv[1] && argv[0])
 		return (NULL);
@@ -46,8 +44,5 @@ char		**ft_get_args(char **argv, t_stack **hd_a, int argc)
 		ft_sto_args(arg_hldr, argv);
 	}
 
-	/* i'm just printing here to shut up my editor. as soon as i remember why \
-	 i created this variable then i will use it accordingly. */
-	ft_disp_list(&hldr, &hldr);
 	return (arg_hldr);
 }
