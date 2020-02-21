@@ -74,6 +74,7 @@ int			main(int ac, char *av[])
 					ft_putendl_fd("Error", 2);
 				}
 			}
+			ft_srtd_stck(&stack_A, &stack_B);
 		}
 
 		else
