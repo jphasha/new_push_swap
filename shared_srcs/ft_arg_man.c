@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-#include <stdio.h>
 
 static void	ft_sto_args(char **ah, char **av)
 {
