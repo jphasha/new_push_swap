@@ -52,7 +52,7 @@ clean:
 	make -C libft/ clean
 
 fclean: clean
-	rm -rf $(CHECKER) $(PUSH_SWAP) a.out program
+	rm -rf $(CHECKER) $(PUSH_SWAP) a.out program main.c
 	make -C libft/ fclean
 
 N:
