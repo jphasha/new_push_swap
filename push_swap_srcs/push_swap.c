@@ -12,23 +12,95 @@
 
 #include "../push_swap.h"
 
-int		main(int ac, char *av[])
+static int		ft_stack_size(t_stack **stack)
+{
+	t_stack		*iter;
+	int			size;
+
+	size = 0;
+	iter = *stack;
+	while (iter)
+	{
+		iter = iter->next;
+		size++;
+	}
+	return (size);
+}
+
+int				ft_find_min(t_stack **stack)
+{
+	t_stack		*iter;
+	t_stack		*hldr;
+	int			i;
+	int			size;
+	int			pos;
+
+	iter = *stack;
+	hldr = iter;
+	i = 1;
+	pos = 1;
+	size = ft_stack_size(stack);
+	while (size >= i && iter->next)
+	{
+		if (iter->data < iter->next->data && iter->data < hldr->data)
+		{
+			hldr = iter;
+			pos = i;
+		}
+		iter = iter->next;
+		i++;
+	}
+	if (!iter->next && iter->data < hldr->data)
+		pos = i;
+	return (pos);
+}
+
+int				main(int ac, char *av[])
 {
 	if (ac > 1)
 	{
 		t_stack	*stack_A;
 		t_stack	*stack_B;
 		char	**args;
+		int		stck_sz;
 
 		stack_A = NULL;
 		stack_B = NULL;
 		args = ft_get_args(av, ac);
+		stck_sz = 0;
 		if (args[0])
 		{
 			if (ft_error_handle(args))
 			{
 				ft_build_stack(&stack_A, args);
 				ft_disp_list(&stack_A, &stack_B);
+				if (!ft_is_sorted(&stack_A))
+				{
+					if ((stck_sz = ft_stack_size(&stack_A)) < 9)
+					{
+						if (ft_find_min(&stack_A) < (ft_stack_size(&stack_A) / 2))
+						{
+							while ((ft_find_min(&stack_A)) > 1)
+							{
+								ft_ra(&stack_A);
+								ft_putendl("ra");
+								if (ft_find_min(&stack_A) == 1)
+								{
+									ft_pb(&stack_A, &stack_B);
+									ft_putendl("pb");
+								}
+							}
+							
+						}
+					}
+
+					else if (ft_stack_size(&stack_A) < 3)
+					{
+						ft_sa(&stack_A);
+						ft_putendl("sa");
+					}
+					ft_disp_list(&stack_A, &stack_B);
+				}
 				ft_srtd_stck(&stack_A, &stack_B);
 			}
 		}
