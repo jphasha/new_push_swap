@@ -62,45 +62,35 @@ int				main(int ac, char *av[])
 		t_stack	*stack_A;
 		t_stack	*stack_B;
 		char	**args;
-		int		stck_sz;
 
 		stack_A = NULL;
 		stack_B = NULL;
 		args = ft_get_args(av, ac);
-		stck_sz = 0;
 		if (args[0])
 		{
 			if (ft_error_handle(args))
 			{
 				ft_build_stack(&stack_A, args);
-				ft_disp_list(&stack_A, &stack_B);
-				if (!ft_is_sorted(&stack_A))
+				if (!ft_is_sorted(&stack_A) || stack_B)
 				{
-					if ((stck_sz = ft_stack_size(&stack_A)) < 9)
+					while (ft_find_min(&stack_A) > 1)
 					{
-						if (ft_find_min(&stack_A) < (ft_stack_size(&stack_A) / 2))
+						ft_ra(&stack_A);
+						ft_putendl("ra");
+						if (ft_find_min(&stack_A) == 1)
 						{
-							while ((ft_find_min(&stack_A)) > 1)
-							{
-								ft_ra(&stack_A);
-								ft_putendl("ra");
-								if (ft_find_min(&stack_A) == 1)
-								{
-									ft_pb(&stack_A, &stack_B);
-									ft_putendl("pb");
-								}
-							}
-							
+							ft_pb(&stack_A, &stack_B);
+							ft_putendl("pb");
 						}
 					}
-
-					else if (ft_stack_size(&stack_A) < 3)
+					while (stack_B)
 					{
-						ft_sa(&stack_A);
-						ft_putendl("sa");
+						ft_pa(&stack_A, &stack_B);
+						ft_putendl("pa");
 					}
-					ft_disp_list(&stack_A, &stack_B);
+					
 				}
+				ft_disp_list(&stack_A, &stack_B);
 				ft_srtd_stck(&stack_A, &stack_B);
 			}
 		}
