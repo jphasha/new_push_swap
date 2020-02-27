@@ -77,7 +77,7 @@ int				main(int ac, char *av[])
 					{
 						ft_ra(&stack_A);
 						ft_putendl("ra");
-						if (ft_find_min(&stack_A) == 1)
+						if ((ft_find_min(&stack_A) == 1) && !ft_is_sorted(&stack_A))
 						{
 							ft_pb(&stack_A, &stack_B);
 							ft_putendl("pb");
@@ -92,6 +92,7 @@ int				main(int ac, char *av[])
 				}
 				ft_disp_list(&stack_A, &stack_B);
 				ft_srtd_stck(&stack_A, &stack_B);
+				ft_del_stack(&stack_A, &stack_B);
 			}
 		}
 		ft_loop_memdel((void **)args);
