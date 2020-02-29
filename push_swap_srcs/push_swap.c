@@ -55,6 +55,39 @@ int				ft_find_min(t_stack **stack)
 	return (pos);
 }
 
+static void		ft_sort_mechanism(char **args, t_stack **stack_A, t_stack **stack_B)
+{
+	if (args[0])
+	{
+		if (ft_error_handle(args))
+		{
+			ft_build_stack(&stack_A, args);
+			if (!ft_is_sorted(&stack_A) || stack_B)
+			{
+				while (ft_find_min(&stack_A) > 1)
+				{
+					ft_ra(&stack_A);
+					ft_putendl("ra");
+					if ((ft_find_min(&stack_A) == 1) && !ft_is_sorted(&stack_A))
+					{
+						ft_pb(&stack_A, &stack_B);
+						ft_putendl("pb");
+					}
+				}
+				while (stack_B)
+				{
+					ft_pa(&stack_A, &stack_B);
+					ft_putendl("pa");
+				}
+					
+			}
+			ft_disp_list(&stack_A, &stack_B);
+			ft_srtd_stck(&stack_A, &stack_B);
+			ft_del_stack(&stack_A, &stack_B);
+		}
+	}
+}
+
 int				main(int ac, char *av[])
 {
 	if (ac > 1)
@@ -66,35 +99,7 @@ int				main(int ac, char *av[])
 		stack_A = NULL;
 		stack_B = NULL;
 		args = ft_get_args(av, ac);
-		if (args[0])
-		{
-			if (ft_error_handle(args))
-			{
-				ft_build_stack(&stack_A, args);
-				if (!ft_is_sorted(&stack_A) || stack_B)
-				{
-					while (ft_find_min(&stack_A) > 1)
-					{
-						ft_ra(&stack_A);
-						ft_putendl("ra");
-						if ((ft_find_min(&stack_A) == 1) && !ft_is_sorted(&stack_A))
-						{
-							ft_pb(&stack_A, &stack_B);
-							ft_putendl("pb");
-						}
-					}
-					while (stack_B)
-					{
-						ft_pa(&stack_A, &stack_B);
-						ft_putendl("pa");
-					}
-					
-				}
-				ft_disp_list(&stack_A, &stack_B);
-				ft_srtd_stck(&stack_A, &stack_B);
-				ft_del_stack(&stack_A, &stack_B);
-			}
-		}
+		ft_sort_mechanism(args, &stack_A, &stack_B);
 		ft_loop_memdel((void **)args);
 	}
 	return (0);
