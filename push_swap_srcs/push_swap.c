@@ -77,6 +77,9 @@ int				ft_find_midpos(t_stack **stack)
 	
 }
 
+// void			ft_screening(char **args, t_stack **stack_A, t_stack **stack_B)
+// {}
+
 int				main(int ac, char *av[])
 {
 	if (ac > 1)
@@ -95,15 +98,15 @@ int				main(int ac, char *av[])
 				ft_build_stack(&stack_A, args);
 				if (!ft_is_sorted(&stack_A) || stack_B)
 				{
-					while (ft_find_min(&stack_A) > 1)
+					while ((ft_find_min(&stack_A) >= 1) && (!ft_is_sorted(&stack_A)))
 					{
-						if (ft_find_midpos(&stack_A) > ft_find_min(&stack_A))
+						if (ft_find_midpos(&stack_A) >= ft_find_min(&stack_A))
 						{
 							ft_ra(&stack_A);
 							ft_putendl("ra");
 						}
 
-						else if ((ft_stack_size(&stack_A) / 2) < ft_find_min(&stack_A))
+						else if ((ft_stack_size(&stack_A) / 2) <= ft_find_min(&stack_A))
 						{
 							ft_rra(&stack_A);
 							ft_putendl("rra");
