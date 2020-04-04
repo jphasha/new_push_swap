@@ -77,8 +77,20 @@ int				ft_find_midpos(t_stack **stack)
 	
 }
 
-// void			ft_screening(char **args, t_stack **stack_A, t_stack **stack_B)
-// {}
+void			ft_screening(char **args, t_stack **stack_A, t_stack **stack_B)
+{
+	if (ft_error_handle(args))
+	{
+		ft_build_stack(stack_A, args);
+		if (!ft_is_sorted(stack_A) || stack_B[0])
+		{
+			ft_sort_algo(stack_A, stack_B);		
+		}
+		ft_disp_list(stack_A, stack_B);
+		ft_srtd_stck(stack_A, stack_B);
+		ft_del_stack(stack_A, stack_B);
+	}
+}
 
 int				main(int ac, char *av[])
 {
@@ -93,41 +105,7 @@ int				main(int ac, char *av[])
 		args = ft_get_args(av, ac);
 		if (args[0])
 		{
-			if (ft_error_handle(args))
-			{
-				ft_build_stack(&stack_A, args);
-				if (!ft_is_sorted(&stack_A) || stack_B)
-				{
-					while ((ft_find_min(&stack_A) >= 1) && (!ft_is_sorted(&stack_A)))
-					{
-						if (ft_find_midpos(&stack_A) >= ft_find_min(&stack_A))
-						{
-							ft_ra(&stack_A);
-							ft_putendl("ra");
-						}
-
-						else if ((ft_stack_size(&stack_A) / 2) <= ft_find_min(&stack_A))
-						{
-							ft_rra(&stack_A);
-							ft_putendl("rra");
-						}
-						if ((ft_find_min(&stack_A) == 1) && !ft_is_sorted(&stack_A))
-						{
-							ft_pb(&stack_A, &stack_B);
-							ft_putendl("pb");
-						}
-					}
-					while (stack_B)
-					{
-						ft_pa(&stack_A, &stack_B);
-						ft_putendl("pa");
-					}
-					
-				}
-				ft_disp_list(&stack_A, &stack_B);
-				ft_srtd_stck(&stack_A, &stack_B);
-				ft_del_stack(&stack_A, &stack_B);
-			}
+			ft_screening(args, &stack_A, &stack_B);
 		}
 		ft_loop_memdel((void **)args);
 	}

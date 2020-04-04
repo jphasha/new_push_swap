@@ -19,10 +19,10 @@ LIBRARY = push_swapft.a
 SOURCES = shared_srcs/ft_stack_man.c shared_srcs/ft_stack_man2.c \
 		  shared_srcs/ft_arg_man.c shared_srcs/ft_error_handle.c \
 		  shared_srcs/ft_both_stacks_man.c shared_srcs/ft_stack_A_man.c \
-		  shared_srcs/ft_stack_B_man.c
+		  shared_srcs/ft_stack_B_man.c push_swap_srcs/ft_sort_algo.c
 
 OBJECTS = ft_stack_man.o ft_stack_man2.o ft_arg_man.o ft_error_handle.o ft_both_stacks_man.o \
-		  ft_stack_A_man.o ft_stack_B_man.o
+		  ft_stack_A_man.o ft_stack_B_man.o ft_sort_algo.o
 
 CC = gcc
 
