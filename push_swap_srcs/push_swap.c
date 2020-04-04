@@ -55,6 +55,28 @@ int				ft_find_min(t_stack **stack)
 	return (pos);
 }
 
+int				ft_find_midpos(t_stack **stack)
+{
+	int			size;
+
+	size = ft_stack_size(stack);
+	if (size == 1)
+	{
+		return (size);
+	}
+
+	else if (size % 2)
+	{
+		return ((size / 2) + 1);
+	}
+
+	else
+	{
+		return (size / 2);
+	}
+	
+}
+
 int				main(int ac, char *av[])
 {
 	if (ac > 1)
@@ -75,8 +97,17 @@ int				main(int ac, char *av[])
 				{
 					while (ft_find_min(&stack_A) > 1)
 					{
-						ft_ra(&stack_A);
-						ft_putendl("ra");
+						if (ft_find_midpos(&stack_A) > ft_find_min(&stack_A))
+						{
+							ft_ra(&stack_A);
+							ft_putendl("ra");
+						}
+
+						else if ((ft_stack_size(&stack_A) / 2) < ft_find_min(&stack_A))
+						{
+							ft_rra(&stack_A);
+							ft_putendl("rra");
+						}
 						if ((ft_find_min(&stack_A) == 1) && !ft_is_sorted(&stack_A))
 						{
 							ft_pb(&stack_A, &stack_B);
