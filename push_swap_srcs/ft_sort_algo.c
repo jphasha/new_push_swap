@@ -4,7 +4,11 @@ void        ft_sort_algo(t_stack **stack_A, t_stack **stack_B)
 {
     while ((ft_find_min(stack_A) >= 1) && (!ft_is_sorted(stack_A)))
 	{
-		if ((ft_find_min(stack_A) == 1) && !ft_is_sorted(stack_A))
+		if (ft_stack_size(stack_A) == 3)
+		{
+			ft_sort_tri(stack_A);
+		}
+		else if ((ft_find_min(stack_A) == 1) && !ft_is_sorted(stack_A))
 		{
 			ft_pb(stack_A, stack_B);
 			ft_putendl("pb");

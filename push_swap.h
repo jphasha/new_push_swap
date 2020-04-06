@@ -22,9 +22,11 @@ typedef struct		s_stack
 }					t_stack;
 char				**ft_get_args(char **argv, int argc);
 int					ft_error_handle(char **args);
+int					ft_find_max(t_stack **head);
 int					ft_find_midpos(t_stack **stack);
 int					ft_find_min(t_stack **stack);
 int					ft_is_sorted(t_stack **head);
+int					ft_stack_size(t_stack **stack);
 int					ft_valid_instr(char *instr);
 void				ft_build_stack(t_stack **stack, char **args);
 void				ft_del_stack(t_stack **hd_a, t_stack **hd_b);
@@ -47,5 +49,11 @@ void				ft_ss(t_stack **stack_A, t_stack **stack_B);
 void				ft_sb(t_stack **stack_B);
 void				ft_sort_algo(t_stack **stack_A, t_stack **stack_B);
 void				ft_srtd_stck(t_stack **hd_a, t_stack **hd_b);
+void				ft_sort_tri(t_stack **stack);
+void				ft_tri_exe_1_2(t_stack **head);
+void				ft_tri_exe_2_1(t_stack **head);
+void				ft_tri_exe_2_3(t_stack **head);
+void				ft_tri_exe_3_1(t_stack **head);
+void				ft_tri_exe_3_2(t_stack **head);
 
 #endif

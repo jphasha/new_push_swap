@@ -12,7 +12,7 @@
 
 #include "../push_swap.h"
 
-static int		ft_stack_size(t_stack **stack)
+int				ft_stack_size(t_stack **stack)
 {
 	t_stack		*iter;
 	int			size;
@@ -86,8 +86,8 @@ void			ft_screening(char **args, t_stack **stack_A, t_stack **stack_B)
 		{
 			ft_sort_algo(stack_A, stack_B);		
 		}
-		ft_disp_list(stack_A, stack_B);
-		ft_srtd_stck(stack_A, stack_B);
+		// ft_disp_list(stack_A, stack_B);
+		// ft_srtd_stck(stack_A, stack_B);
 		ft_del_stack(stack_A, stack_B);
 	}
 }
