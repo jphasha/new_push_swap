@@ -66,7 +66,7 @@ int			main(int ac, char *av[])
 				if (ft_valid_instr(instr))
 				{
 					ft_exec_instrs(instr, &stack_A, &stack_B);
-					ft_disp_list(&stack_A, &stack_B);
+					// ft_disp_list(&stack_A, &stack_B);
 				}
 
 				else

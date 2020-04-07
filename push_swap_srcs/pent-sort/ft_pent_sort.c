@@ -11,6 +11,8 @@ void			ft_sort_pent(t_stack **stack_A, t_stack **stack_B)
 		return ;
 	else if (pos_min <= 3 && pos_max <= 4)
 		ft_psce_1(stack_A, stack_B);
+	else if (pos_min == 5 && (pos_max == 3 || pos_max == 4))
+		ft_psce_3(stack_A, stack_B);
 	else
 		ft_psce_2(stack_A, stack_B);
 }
