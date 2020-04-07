@@ -8,6 +8,12 @@ void        ft_sort_algo(t_stack **stack_A, t_stack **stack_B)
 		{
 			ft_sort_tri(stack_A);
 		}
+
+		else if (ft_stack_size(stack_A) == 5)
+		{
+			ft_sort_pent(stack_A, stack_B);
+		}
+		
 		else if ((ft_find_min(stack_A) == 1) && !ft_is_sorted(stack_A))
 		{
 			ft_pb(stack_A, stack_B);

@@ -34,7 +34,7 @@ char		**ft_get_args(char **argv, int argc)
 
 	arg_hldr = NULL;
 	// just a friendly reminder:
-	ft_putendl("just a quick reminder, it is better to build an ft_split() that can read arguments that appear after the new line character.\nP.S. this message is printed from ft_get_args() in ft_arg_man.c");
+	// ft_putendl("just a quick reminder, it is better to build an ft_split() that can read arguments that appear after the new line character.\nP.S. this message is printed from ft_get_args() in ft_arg_man.c");
 	if (!argv[1] && argv[0])
 		return (NULL);
 	else if (argv[1] && !argv[2])
