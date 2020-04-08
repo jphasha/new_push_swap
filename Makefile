@@ -28,12 +28,12 @@ SOURCES = shared_srcs/ft_stack_man.c shared_srcs/ft_stack_man2.c \
 		  push_swap_srcs/pent-sort/psce_1/ft_psce1_smplfy.c \
 		  push_swap_srcs/pent-sort/psce_2/ft_psce2_exe1.c \
 		  push_swap_srcs/pent-sort/psce_2/ft_psce2_exe2.c \
-		  push_swap_srcs/pent-sort/psce_3/ft_psce3_exe1.c
+		  push_swap_srcs/pent-sort/psce_3/ft_psce3_exe1.c push_swap_srcs/ft_sort_first_tri.c
 
 OBJECTS = ft_stack_man.o ft_stack_man2.o ft_arg_man.o ft_error_handle.o ft_both_stacks_man.o \
 		  ft_stack_A_man.o ft_stack_B_man.o ft_sort_algo.o ft_tri_sort_exe.o ft_find_pos.o \
 		  ft_tri_sort.o ft_pent_sort.o ft_psce1_exe.o ft_psce1_exe2.o ft_psce1_smplfy.o \
-		  ft_psce2_exe1.o ft_psce2_exe2.o ft_psce3_exe1.o
+		  ft_psce2_exe1.o ft_psce2_exe2.o ft_psce3_exe1.o ft_sort_first_tri.o
 
 CC = gcc
 

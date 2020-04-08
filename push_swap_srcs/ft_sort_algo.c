@@ -2,6 +2,9 @@
 
 static void	ft_gen_algo(t_stack **stack_A, t_stack **stack_B)
 {
+	t_stack	*pos;
+
+	pos = *stack_A;
 	if ((ft_find_min(stack_A) == 1) && !ft_is_sorted(stack_A))
 	{
 		ft_pb(stack_A, stack_B);
@@ -13,6 +16,11 @@ static void	ft_gen_algo(t_stack **stack_A, t_stack **stack_B)
         ft_sa(stack_A);
         ft_putendl("sa");
     }
+
+	else if(!((pos->data < pos->next->data) && (pos->data < pos->next->next->data) && (pos->next->data < pos->next->next->data)))
+	{
+		ft_sort_first_tri(stack_A);
+	}
         
     else if (ft_find_midpos(stack_A) >= ft_find_min(stack_A))
 	{
@@ -25,6 +33,12 @@ static void	ft_gen_algo(t_stack **stack_A, t_stack **stack_B)
 		ft_rra(stack_A);
 		ft_putendl("rra");
 	}
+
+	else
+	{
+		ft_putendl("\nWE ARE MISSING A SCENARIO");
+	}
+	
 }
 
 void        ft_sort_algo(t_stack **stack_A, t_stack **stack_B)

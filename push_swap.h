@@ -73,6 +73,7 @@ void				ft_sa(t_stack **stack_A);
 void				ft_ss(t_stack **stack_A, t_stack **stack_B);
 void				ft_sb(t_stack **stack_B);
 void				ft_sort_algo(t_stack **stack_A, t_stack **stack_B);
+void    			ft_sort_first_tri(t_stack **stack);
 void				ft_sort_pent(t_stack **stack_A, t_stack **stack_B);
 void				ft_srtd_stck(t_stack **hd_a, t_stack **hd_b);
 void				ft_sort_tri(t_stack **stack);
